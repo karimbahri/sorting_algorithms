@@ -1,4 +1,5 @@
-#ifndef __SORT__ define __SORT__
+#ifndef __SORT__ 
+#define __SORT__
 
 /*---------------------STRUCTURES---------------------*/
 
