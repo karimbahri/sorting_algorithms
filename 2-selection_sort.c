@@ -30,3 +30,15 @@ void selection_sort(int *array, size_t size)
 		}
 	}
 }
+
+/**
+ * swap - swap the values of two integers
+ * @a: first integer
+ * @b: second integer
+ */
+void swap(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
