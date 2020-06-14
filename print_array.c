@@ -24,3 +24,15 @@ void print_array(const int *array, size_t size)
 	}
 	printf("\n");
 }
+
+/**
+ * swap - swap the values of two integers
+ * @a: first integer
+ * @b: second integer
+ */
+void swap(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
