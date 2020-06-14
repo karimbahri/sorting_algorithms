@@ -3,6 +3,18 @@
 #include "sort.h"
 
 /**
+ * swap - swap the values of two integers
+ * @a: first integer
+ * @b: second integer
+ */
+void swap(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+/**
  * bubble_sort - sorting array using bubble algorithm
  * @array: array to sort
  * @size: size of the array
