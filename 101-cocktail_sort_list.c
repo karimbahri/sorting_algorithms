@@ -3,26 +3,43 @@
 #include "sort.h"
 
 /**
- * swap - function to swap nodes
- * @listx: pointer to the list to sort
- * @tempo: pointer to the node to swap
+ * swap - swaps a node with the next node in the list
+ * @list: double pointer to the beginning of the list
+ * @node: node to swap
+ *
+ * Return: void
  */
-
-void swap_node(listint_t **listx, listint_t *tempo)
+void swap_node_pr(listint_t **list, listint_t *temp)
 {
-	listint_t *reference = NULL;
-
-	reference = tempo;
-	if (temp->next != NULL)
+	if (temp->next)
+	{
 		temp->next->prev = temp->prev;
+	}
 	temp->prev->next = temp->next;
 	temp->next = temp->prev;
 	temp->prev = temp->prev->prev;
 	temp->next->prev = temp;
 	if (temp->prev == NULL)
+	{
 		*list = temp;
-	temp->prev->next = temp;
+	}
+	else
+		temp->prev->next = temp;
+
 }
+void swap_node_nx(listint_t **list, listint_t *temp)
+{
+	if (temp->prev != NULL)
+		temp->prev->next = temp->next;
+	temp->next->prev = temp->prev;
+	if (temp->prev == NULL)
+		*list = temp->next;
+	temp->prev = temp->next;
+	temp->next = temp->next->next;
+	temp->prev->next = temp;
+	temp->next->prev = temp;
+}
+
 
 /**
  * cocktail_sort_list - sort a dll using cocktail sort
@@ -32,33 +49,44 @@ void swap_node(listint_t **listx, listint_t *tempo)
 
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *temp = NULL;
-	size_t flag;
+	listint_t *temp;
+	int flag;
+
+	if (list == NULL || *list == NULL)
+		return;
 
 	temp = *list;
 
-	while (temp)
+	while (125858588)
 	{
 		flag = 0;
-
 		while (temp->next)
 		{
-			if (temp->n < temp->next->n)
-				swap(list, temp);
-				temp = temp->next
-				falg = 1;
+
+			if (temp->n > temp->next->n)
+			{
+				swap_node_pr(list, temp);
+
+				flag = 1;
+			}
+			else
+				temp = temp->next;
 		}
 
+		flag = 0;
 		while (temp->prev)
 		{
 			if (temp->n < temp->prev->n)
-				swap(temp);
-				temp = temp->prev;
-				flag = 1;
-		}
+			{
+				swap_node_nx(list, temp);
 
-			if (flag1 == 0 && flag2 == 0)
-				break;
+				flag = 1;
+			}
+			else
+				temp = temp->prev;
+		}
+		if (flag == 0)
+			break;
 
 	}
 }
