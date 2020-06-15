@@ -3,9 +3,9 @@
 #include "sort.h"
 
 /**
- * swap - swaps a node with the next node in the list
+ * swap_node_pr - swaps a node with the next node in the list
  * @list: double pointer to the beginning of the list
- * @node: node to swap
+ * @temp: pointer to the node to swap
  *
  * Return: void
  */
@@ -27,13 +27,20 @@ void swap_node_pr(listint_t **list, listint_t *temp)
 		temp->prev->next = temp;
 
 }
+
+/**
+ * swap_node_nx - function to swap nodes
+ * @list: pointer to the list to sort
+ * @temp: pointer to the node to swap
+ */
 void swap_node_nx(listint_t **list, listint_t *temp)
 {
 	if (temp->prev != NULL)
 		temp->prev->next = temp->next;
 	temp->next->prev = temp->prev;
-	if (temp->prev == NULL)
+	if (temp->next->prev == NULL)
 		*list = temp->next;
+	else
 	temp->prev = temp->next;
 	temp->next = temp->next->next;
 	temp->prev->next = temp;
@@ -65,9 +72,10 @@ void cocktail_sort_list(listint_t **list)
 
 			if (temp->n > temp->next->n)
 			{
-				swap_node_pr(list, temp);
+				swap_node_pr(list, temp->next);
 
 				flag = 1;
+				print_list(*list);
 			}
 			else
 				temp = temp->next;
@@ -78,9 +86,10 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (temp->n < temp->prev->n)
 			{
-				swap_node_nx(list, temp);
-
+				swap_node_pr(list, temp);
+				/*swap_node_nx(list, temp);*/
 				flag = 1;
+				print_list(*list);
 			}
 			else
 				temp = temp->prev;
