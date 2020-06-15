@@ -41,5 +41,6 @@ void swap(int *a, int *b);
 void insertion_sort_list(listint_t **list);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
-void swap_node(listint_t **listx, listint_t *tempo);
+void swap_node_nx(listint_t **list, listint_t *temp);
+void swap_node_pr(listint_t **list, listint_t *temp);
 #endif
