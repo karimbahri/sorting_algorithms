@@ -80,7 +80,6 @@ void cocktail_sort_list(listint_t **list)
 			else
 				temp = temp->next;
 		}
-
 		flag = 0;
 		while (temp->prev)
 		{
@@ -96,6 +95,5 @@ void cocktail_sort_list(listint_t **list)
 		}
 		if (flag == 0)
 			break;
-
 	}
 }
