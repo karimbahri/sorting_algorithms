@@ -55,6 +55,7 @@ int partition(int array[], int begin, int end, size_t size)
 			swap(&array[pos], &array[i]);
 			if (pos != i)
 				print_array(array, size);
+
 		}
 	swap(&array[end], &array[pos + 1]);
 	if (end != (pos + 1))
