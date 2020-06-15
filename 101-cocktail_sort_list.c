@@ -80,7 +80,6 @@ void cocktail_sort_list(listint_t **list)
 			else
 				temp = temp->next;
 		}
-		
 		while (temp->prev)
 		{
 			if (temp->n < temp->prev->n)
