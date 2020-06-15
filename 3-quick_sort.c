@@ -53,11 +53,11 @@ int partition(int array[], int begin, int end, size_t size)
 		{
 			pos++;
 			swap(&array[pos], &array[i]);
-			if (i > begin)
+			if (pos != i)
 				print_array(array, size);
 		}
 	swap(&array[end], &array[pos + 1]);
-	if (begin != end)
+	if (end != (pos + 1))
 		print_array(array, size);
 	return (pos + 1);
 }
