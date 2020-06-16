@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "sort.h"
 
+/**
+ * counting_sort - sorting array using counting algorithm
+ * @array: array to sort
+ * @size: size of the array
+ */
 void counting_sort(int *array, size_t size)
 {
 	int *counting_array, *sorted;
@@ -35,6 +40,12 @@ void counting_sort(int *array, size_t size)
 	free(sorted);
 }
 
+/**
+ * findMax - find the maxElement in given array
+ * @array: array to check
+ * @size: size of the array
+ * Return: max
+ */
 int findMax(int array[], size_t size)
 {
 	int max = array[0];
@@ -43,9 +54,14 @@ int findMax(int array[], size_t size)
 	for (i = 1 ; i < size ; i++)
 		if (array[i] > max)
 			max = array[i];
-	return max;
+	return (max);
 }
 
+/**
+ * fillZero - fill array with the value zero
+ * @array: array to fill
+ * @size: size of the array
+ */
 void fillZero(int array[], size_t size)
 {
 	size_t i;
@@ -54,6 +70,12 @@ void fillZero(int array[], size_t size)
 		array[i] = 0;
 }
 
+/**
+ * countOccur - count number of occurrence in an array
+ * @countArray: array to check
+ * @array: first array
+ * @size: size of the array
+ */
 void countOccur(int countArray[], int array[], size_t size)
 {
 	size_t i;
@@ -62,6 +84,12 @@ void countOccur(int countArray[], int array[], size_t size)
 		countArray[array[i]]++;
 }
 
+/**
+ * assignArray - copy the value of an array into another
+ * @array1: array to assign
+ * @array2: source
+ * @size: size of the array
+ */
 void assignArray(int array1[], int array2[], size_t size)
 {
 	size_t i;
