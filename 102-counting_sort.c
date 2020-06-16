@@ -30,6 +30,9 @@ void counting_sort(int *array, size_t size)
 		counting_array[array[i]]--;
 	}
 	assignArray(array, sorted, size);
+
+	free(counting_array);
+	free(sorted);
 }
 
 int findMax(int array[], size_t size)
