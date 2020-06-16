@@ -21,7 +21,10 @@ void counting_sort(int *array, size_t size)
 		return;
 	sorted = malloc(sizeof(int) * size);
 	if (!sorted)
+	{
+		free(counting_array)
 		return;
+	}
 
 	fillZero(counting_array, k + 1);
 	countOccur(counting_array, array, size);
