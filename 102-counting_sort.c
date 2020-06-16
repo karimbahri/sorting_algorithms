@@ -13,7 +13,7 @@ void counting_sort(int *array, size_t size)
 	int k = findMax(array, size);
 	int i;
 
-	if (!array)
+	if (!array || size < 2)
 		return;
 
 	counting_array = malloc(sizeof(int) * (k + 1));
@@ -26,7 +26,7 @@ void counting_sort(int *array, size_t size)
 	fillZero(counting_array, k + 1);
 	countOccur(counting_array, array, size);
 
-	for (i = 0 ; i < (k + 1) ; i++)
+	for (i = 1 ; i < (k + 1) ; i++)
 		counting_array[i] += counting_array[i - 1];
 
 	print_array(counting_array, k + 1);
