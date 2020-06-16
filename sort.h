@@ -39,6 +39,7 @@ void quick_sort(int *array, size_t size);
 int partition(int array[], int begin, int end, size_t size);
 void quick_sort(int *array, size_t size);
 void quick_sort_function(int *array, int begin, int end, size_t size);
+void counting_sort(int *array, size_t size);
 void swap(int *a, int *b);
 void insertion_sort_list(listint_t **list);
 void shell_sort(int *array, size_t size);
@@ -46,4 +47,8 @@ void cocktail_sort_list(listint_t **list);
 void swap_node_nx(listint_t **list, listint_t *temp);
 void swap_node_pr(listint_t **list, listint_t *temp);
 void merge_sort(int *array, size_t size);
+int findMax(int array[], size_t size);
+void fillZero(int array[], size_t size);
+void countOccur(int countArray[], int array[], size_t size);
+void assignArray(int array1[], int array2[], size_t size);
 #endif
