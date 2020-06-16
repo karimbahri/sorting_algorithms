@@ -13,7 +13,7 @@ void counting_sort(int *array, size_t size)
 	int k = findMax(array, size);
 	int i;
 
-	if (!array || size < 2)
+	if (!array)
 		return;
 
 	counting_array = malloc(sizeof(int) * (k + 1));
