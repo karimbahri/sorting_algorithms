@@ -22,7 +22,7 @@ void counting_sort(int *array, size_t size)
 	sorted = malloc(sizeof(int) * size);
 	if (!sorted)
 	{
-		free(counting_array)
+		free(counting_array);
 		return;
 	}
 
