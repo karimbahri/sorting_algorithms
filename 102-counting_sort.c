@@ -11,12 +11,12 @@ void counting_sort(int *array, size_t size)
 {
 	int *counting_array, *sorted;
 	int k = findMax(array, size);
-	int i;
+	size_t i;
 
 	if (!array || size < 2)
 		return;
 
-	counting_array = malloc(sizeof(size_t) * (k + 1));
+	counting_array = malloc(sizeof(int) * (k + 1));
 	if (!counting_array)
 		return;
 	sorted = malloc(sizeof(int) * size);
@@ -26,12 +26,12 @@ void counting_sort(int *array, size_t size)
 	fillZero(counting_array, k + 1);
 	countOccur(counting_array, array, size);
 
-	for (i = 1 ; i < (k + 1) ; i++)
+	for (i = 1 ; i < (size_t)(k + 1) ; i++)
 		counting_array[i] += counting_array[i - 1];
 
 	print_array(counting_array, k + 1);
 
-	for (i = (int)size - 1 ; i > -1 ; i--)
+	for (i = 0 ; i < size ; i++)
 	{
 		sorted[counting_array[array[i]] - 1] = array[i];
 		counting_array[array[i]]--;
