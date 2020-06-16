@@ -1,6 +1,8 @@
 #ifndef __SORT__
 #define __SORT__
 
+#include <stddef.h>
+
 /*---------------------STRUCTURES---------------------*/
 
 /**
@@ -43,4 +45,5 @@ void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void swap_node_nx(listint_t **list, listint_t *temp);
 void swap_node_pr(listint_t **list, listint_t *temp);
+void merge_sort(int *array, size_t size);
 #endif
