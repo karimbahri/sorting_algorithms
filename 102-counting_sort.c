@@ -17,8 +17,10 @@ void counting_sort(int *array, size_t size)
 		return;
 
 	counting_array = malloc(sizeof(int) * (k + 1));
+	if (!counting_array)
+		return;
 	sorted = malloc(sizeof(int) * size);
-	if (!counting_array || !sorted)
+	if (!sorted)
 		return;
 
 	fillZero(counting_array, k + 1);
