@@ -32,7 +32,7 @@ void shell_sort(int *array, size_t size)
 
 
 
-	while (gap < size / 3)
+	while (gap < (size - 1) / 3)
 		gap = gap * 3 + 1;
 
 	for (gap = gap; gap > 0; gap = (gap - 1) / 3)
