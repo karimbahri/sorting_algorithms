@@ -10,12 +10,13 @@
 void counting_sort(int *array, size_t size)
 {
 	int *counting_array, *sorted;
-	int k = findMax(array, size);
+	int k = 0;
 	size_t i;
 
 	if (!array || size < 2)
 		return;
 
+	k = findMax(array, size);
 	counting_array = malloc(sizeof(int) * (k + 1));
 	if (!counting_array)
 		return;
@@ -56,6 +57,8 @@ int findMax(int array[], size_t size)
 	int max = array[0];
 	size_t i;
 
+	if (!array[0])
+		return (1);
 	for (i = 1 ; i < size ; i++)
 		if (array[i] > max)
 			max = array[i];
